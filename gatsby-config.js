@@ -10,17 +10,18 @@ export default {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-react-svg',
     'gatsby-plugin-react-helmet',
     //'gatsby-plugin-ts-config',
     'gatsby-plugin-styled-components',
-    // {
-    //   resolve: 'gatsby-source-sanity',
-    //   options: {
-    //     projectId: '9t3oheam',
-    //     dataset: 'production',
-    //     watchMode: true,
-    //     token: process.env.SANITY_TOKEN,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '3nbpuff1',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
   ],
 }
