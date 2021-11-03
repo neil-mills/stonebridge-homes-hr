@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import PlayIcon from '../assets/svg/play.svg'
-import { SectionGutter, MarginBottomNone } from '../assets/styles/Utils'
+import {
+  SectionGutter,
+  GutterPaddingRight,
+  MarginBottomNone,
+} from '../assets/styles/Utils'
 import Button from './Button'
 import { HeadingLarge } from '../assets/styles/Typography'
 
 const SectionStyles = styled.section`
   display: grid;
   gap: 2rem;
-  @media screen and (min-width: 550px) {
-    gap: 4vw;
-  }
-  @media screen and (min-width: 1300px) {
-    gap: 8vw;
+  @media screen and (min-width: 500px) {
+    gap: 0;
   }
   grid-template-rows: repeat(auto, 2);
   align-items: center;
@@ -30,12 +31,16 @@ const SectionStyles = styled.section`
       ${MarginBottomNone}
     }
   }
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    aside {
+      padding: 0 0 0 4vw;
+    }
     &[data-text-align='left'] {
       aside {
         order: 1;
+        padding: 0 4vw 0 0;
       }
     }
   }
@@ -87,14 +92,14 @@ const ImageAndTextBlock = ({
     <SectionStyles data-text-align={alignText}>
       {src && video && (
         <Picture>
-          <source media="(min-width: 768px)" srcSet={srcLarge} />
+          <source media="(min-width: 500px)" srcSet={srcLarge} />
           <PlayIcon />
           <img src={src} alt={srcAlt} />
         </Picture>
       )}
       {src && !video && (
         <Picture>
-          <source media="(min-width: 768px)" srcSet={srcLarge} />
+          <source media="(min-width: 500px)" srcSet={srcLarge} />
           <img src={src} />
         </Picture>
       )}

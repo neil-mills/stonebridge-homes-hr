@@ -29,7 +29,7 @@ const newsPages = async ({ graphql, actions }) => {
 }
 
 const newsCategories = async ({ graphql, actions }) => {
-  const newsCategoryTemplate = path.resolve('./src/pages/news.tsx')
+  const newsCategoryTemplate = path.resolve('./src/pages/our-community.tsx')
   const { data } = await graphql(`
     query {
       categories: allSanityNewsCategory {
@@ -54,6 +54,6 @@ const newsCategories = async ({ graphql, actions }) => {
   })
 }
 
-export const createPages = async params => {
-  await Promise.all([newsPages(params), newsCategories(params)])
-}
+// export const createPages = async params => {
+//   await Promise.all([newsPages(params), newsCategories(params)])
+// }

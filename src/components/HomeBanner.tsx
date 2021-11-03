@@ -6,15 +6,14 @@ import {
   GutterPaddingLeft,
   GutterPaddingRight,
   GutterPaddingBottom,
+  SectionGutter,
 } from '../assets/styles/Utils'
 
 const HomeBannerStyles = styled.section`
   background-color: var(--green);
   display: block;
   height: auto;
-  ${GutterPaddingRight}
-  ${GutterPaddingLeft}
-  ${GutterPaddingBottom}
+  ${SectionGutter}
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -25,7 +24,7 @@ const HomeBannerStyles = styled.section`
   }
   p {
     color: var(--gold);
-    margin: 2rem 0 6rem;
+    margin: 2rem 0 0;
   }
   max-height: 780px;
   @media screen and (min-width: 768px) and (orientation: portrait) {

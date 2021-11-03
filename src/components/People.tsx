@@ -74,6 +74,7 @@ const articles: ArticleItemType[] = [
 
 const PeopleStyles = styled.section`
   ${SectionGutter}
+  background-color: var(--light-grey);
   h2 {
     ${HeadingLarge}
   }

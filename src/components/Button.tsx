@@ -6,7 +6,10 @@ import { FontBold } from '../assets/styles/Typography'
 const ButtonStyles = styled.button`
   ${FontBold}
   display: block;
-  margin-top: 4.3vw;
+  margin-top: 4rem;
+  @media screen and (min-width: 768px) {
+    margin-top: 4.3vw;
+  }
   background-color: var(--gold);
   color: var(--white);
   font-size: var(--font-xsmall);

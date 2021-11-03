@@ -26,10 +26,10 @@ const ImageBannerStyles = styled.section`
   position: relative;
   align-items: start;
   height: auto;
-  ${GutterPaddingRight}
-  ${GutterPaddingLeft}
-  ${GutterMarginBottom}
   @media screen and (min-width: 768px) {
+    ${GutterPaddingRight}
+    ${GutterPaddingLeft}
+    ${GutterMarginBottom}
     &:before {
       content: '';
       display: block;
@@ -38,9 +38,13 @@ const ImageBannerStyles = styled.section`
       max-height: 406px;
     }
     &[data-position='top'] {
+      margin-bottom: 2vw;
+      @media screen and (min-width: 1024px) {
+        margin-bottom: 0;
+      }
       &:before {
-        height: 20vh;
-        max-height: 400px;
+        height: 16vw;
+        max-height: 430px;
       }
     }
   }
@@ -73,11 +77,11 @@ const InsetBox = styled.div`
     margin-top: 4.3vw;
   }
   @media screen and (min-width: 768px) {
-    width: 48vw;
+    width: 46vw;
     padding: 5.7vw;
   }
   @media screen and (min-width: 1300px) {
-    width: 46vw;
+    width: 42vw;
   }
 `
 const BgImage = styled.picture`

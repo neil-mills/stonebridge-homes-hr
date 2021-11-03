@@ -27,7 +27,7 @@ export const WhiteHover = css`
 
 export const SectionGutter = css`
   padding: 4rem 2rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     padding: var(--gutter-v) var(--gutter-h);
   }
   @media screen and (min-width: 1300px) {
@@ -36,7 +36,7 @@ export const SectionGutter = css`
 `
 export const GutterPaddingTop = css`
   padding-top: 4rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     padding-top: var(--gutter-v);
   }
   @media screen and (min-width: 1300px) {
@@ -45,7 +45,7 @@ export const GutterPaddingTop = css`
 `
 export const GutterPaddingRight = css`
   padding-right: 2rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     padding-right: var(--gutter-h);
   }
   @media screen and (min-width: 1300px) {
@@ -54,7 +54,7 @@ export const GutterPaddingRight = css`
 `
 export const GutterPaddingBottom = css`
   padding-bottom: 4rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     padding-bottom: var(--gutter-v);
   }
   @media screen and (min-width: 1300px) {
@@ -63,7 +63,7 @@ export const GutterPaddingBottom = css`
 `
 export const GutterPaddingLeft = css`
   padding-left: 2rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     padding-left: var(--gutter-h);
   }
   @media screen and (min-width: 1300px) {
@@ -72,7 +72,7 @@ export const GutterPaddingLeft = css`
 `
 export const GutterMarginBottom = css`
   margin-bottom: 4rem;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
     margin-bottom: var(--gutter-v);
   }
   @media screen and (min-width: 1300px) {

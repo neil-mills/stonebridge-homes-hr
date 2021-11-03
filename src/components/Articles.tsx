@@ -8,7 +8,10 @@ const Track = styled.div`
     gap: 1rem;
     row-gap: 4rem;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
     width: 100%;
   }
   [data-carousel='true'] & {

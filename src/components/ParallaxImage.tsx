@@ -9,8 +9,8 @@ const SectionStyles = styled.section`
   background-position: top center;
   background-size: cover;
   @media screen and (min-width: 768px) {
-    height: 52vw;
-    max-height: 730px;
+    height: 42vw;
+    max-height: 600px;
     background-attachment: fixed;
   }
 `

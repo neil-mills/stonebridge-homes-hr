@@ -16,15 +16,17 @@ const FooterStyles = styled.footer`
     display: grid;
     justify-content: start;
     align-items: start;
+    margin-bottom: 2rem;
   }
   aside {
     display: grid;
     grid-template-rows: auto 20px;
-    gap: 2.5rem;
+    gap: 4rem;
     border-top: 1px solid var(--white);
-    padding-top: var(--gutter);
+    padding-top: 2rem;
     @media screen and (min-width: 768px) {
       justify-content: right;
+      gap: 2.5rem;
       border: 0;
       padding: 0;
     }
@@ -49,7 +51,6 @@ const SecondaryNav = styled.nav`
   position: relative;
   grid-template-rows: repeat(auto, 2);
   justify-content: start;
-  padding-bottom: var(--gutter);
   @media screen and (min-width: 768px) {
     grid-template-columns: auto auto;
     grid-template-rows: auto;
