@@ -25,13 +25,30 @@ export const WhiteHover = css`
   }
 `
 
+export const GoldLink = css`
+  color: var(--gold);
+  transition: color 500ms ease;
+  &:link,
+  &:visited {
+    color: var(--gold);
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--gold-hover);
+    svg path {
+      fill: var(--gold-hover);
+    }
+  }
+`
+
 export const SectionGutter = css`
   padding: 4rem 2rem;
   @media screen and (min-width: 768px) {
     padding: var(--gutter-v) var(--gutter-h);
   }
   @media screen and (min-width: 1300px) {
-    padding: calc(var(--gutter-v) * 2) calc(var(--gutter-h) * 2);
+    padding: calc(var(--gutter-h) * 2) calc(var(--gutter-h) * 2);
   }
 `
 export const GutterPaddingTop = css`
@@ -40,7 +57,7 @@ export const GutterPaddingTop = css`
     padding-top: var(--gutter-v);
   }
   @media screen and (min-width: 1300px) {
-    padding-top: calc(var(--gutter-v) * 2);
+    padding-top: calc(var(--gutter-h) * 2);
   }
 `
 export const GutterPaddingRight = css`
@@ -58,7 +75,7 @@ export const GutterPaddingBottom = css`
     padding-bottom: var(--gutter-v);
   }
   @media screen and (min-width: 1300px) {
-    padding-bottom: calc(var(--gutter-v) * 2);
+    padding-bottom: calc(var(--gutter-h) * 2);
   }
 `
 export const GutterPaddingLeft = css`
@@ -78,4 +95,16 @@ export const GutterMarginBottom = css`
   @media screen and (min-width: 1300px) {
     margin-bottom: calc(var(--gutter-v) * 2);
   }
+`
+export const ScrollableArea = css`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  --ms-overflow-style: none;
+  scrollbar-width: none;
 `

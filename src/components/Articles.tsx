@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import ArticleItem from './ArticleItem'
+import PageMenu from './PageMenu'
 
 const Track = styled.div`
   [data-carousel='false'] & {
     display: grid;
-    gap: 1rem;
-    row-gap: 4rem;
+    gap: 2rem;
+    row-gap: 2rem;
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     @media screen and (min-width: 1024px) {
@@ -38,9 +39,14 @@ interface Article {
   srcLarge: string
 }
 
+export interface Categories {
+  slug: string
+  title: string
+}
 interface ArticlesProps {
   carousel?: boolean
   articles: Article[]
+  categories?: Categories[]
 }
 
 const Articles = ({
@@ -85,18 +91,20 @@ const Articles = ({
   }, [])
 
   return (
-    <div data-carousel={carousel}>
-      <Track ref={trackRef}>
-        {articles.map((article, i) => (
-          <ArticleItem
-            key={i}
-            ref={(element: HTMLElement) => (articleRefs.current[i] = element)}
-            {...article}
-            width={carousel ? `${articleWidth}px` : 'auto'}
-          />
-        ))}
-      </Track>
-    </div>
+    <>
+      <div data-carousel={carousel}>
+        <Track ref={trackRef}>
+          {articles.map((article, i) => (
+            <ArticleItem
+              key={i}
+              ref={(element: HTMLElement) => (articleRefs.current[i] = element)}
+              {...article}
+              width={carousel ? `${articleWidth}px` : 'auto'}
+            />
+          ))}
+        </Track>
+      </div>
+    </>
   )
 }
 

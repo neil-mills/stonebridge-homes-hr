@@ -1,4 +1,4 @@
-import path from 'path'
+const path = require('path')
 
 const newsPages = async ({ graphql, actions }) => {
   const articleTemplate = path.resolve('./src/templates/Article.tsx')

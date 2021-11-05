@@ -1,6 +1,6 @@
 import React, { ReactNode, forwardRef } from 'react'
 import styled from 'styled-components'
-import { navigate } from 'gatsby-link'
+import { Link } from 'gatsby'
 import { HeadingStyle } from '../assets/styles/Typography'
 import PlayIcon from '../assets/svg/play.svg'
 
@@ -60,9 +60,7 @@ const ArticleLink = ({
   link?: string
   children: ReactNode
 }) => {
-  return (
-    <>{link ? <a onClick={() => navigate(link)}>{children}</a> : children}</>
-  )
+  return <>{link ? <Link to={link}>{children}</Link> : children}</>
 }
 
 const ArticleItem = forwardRef<HTMLElement, ArticleItemType>((props, ref) => {

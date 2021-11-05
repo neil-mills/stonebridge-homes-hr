@@ -8,7 +8,7 @@ export const HeadingStyle = css`
   font-family: efframedium;
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1;
 `
 export const HeadingXLarge = css`
   font-size: var(--font-xlarge);
@@ -23,11 +23,21 @@ export const HeadingXLarge = css`
 export const HeadingLarge = css`
   font-size: var(--font-large);
   margin-bottom: 2rem;
+  line-height: 1.2;
+  span {
+    color: var(--gold);
+    font-size: (--font-small);
+    display: block;
+  }
   @media screen and (min-width: 768px) {
     margin-bottom: 2.1vw;
     font-size: var(--font-large-desktop);
     font-size: clamp(var(--font-large), 2.5vw, var(--font-large-desktop));
   }
+`
+
+export const HeadingMedium = css`
+  font-size: ;
 `
 export const FontRegular = css`
   font-family: effraregular;
@@ -60,6 +70,7 @@ const Typography = createGlobalStyle`
   }
   h1,h2,h3,h4 {
     ${HeadingStyle}
+    margin-bottom: 2rem;
   }
 `
 

@@ -31,10 +31,23 @@ const LogoStyles = styled(Link)`
     width: 100%;
   }
 `
+const SkipLink = styled.a`
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  display: inline-block;
+  padding: 2px 10px;
+  &:focus {
+    background-color: var(--gold);
+    color: var(--black);
+    left: 0;
+  }
+`
 
 const Header: FC = () => {
   return (
     <HeaderStyles>
+      <SkipLink href="#content">Skip to main content</SkipLink>
       <LogoStyles to="/">
         <img src={Logo} alt="Stonebridge" />
       </LogoStyles>

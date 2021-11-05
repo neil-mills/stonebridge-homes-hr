@@ -7,7 +7,9 @@ const GlobalStyles = createGlobalStyle`
     --gold-hover: #a38646;
     --grey: #666666;
     --light-grey: #FAFAFA;
+    --keyline-grey: #E8E8E8;
     --white: #FFFFFF;
+    --black: #000000;       
     --white-hover: #cccccc;
     --font-xlarge: 3rem;
     --font-xlarge-desktop: 6.5rem;
@@ -66,8 +68,13 @@ const GlobalStyles = createGlobalStyle`
   } 
   a {
     text-decoration: none;
-    outline: none;
+    outline: 3px solid transparent;
     display: block;
+  }
+  a, button {
+    &:focus {
+      outline: 3px solid var(--black);
+    }
   }
   * {
     -webkit-font-smoothing: antialiased;

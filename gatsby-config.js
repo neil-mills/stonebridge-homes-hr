@@ -1,7 +1,7 @@
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 dotenv.config({ path: '.env' })
 
-export default {
+const defaultConfig = {
   siteMetadata: {
     title: 'Stonebridge Homes HR',
     siteUrl: 'http://careers.stonebridgehomes.co.uk',
@@ -25,3 +25,5 @@ export default {
     },
   ],
 }
+
+module.exports = defaultConfig
