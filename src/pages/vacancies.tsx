@@ -5,7 +5,7 @@ import ImageBanner from '../components/ImageBanner'
 import Banner from '../assets/images/vacancies-banner.jpg'
 import BannerLg from '../assets/images/vacancies-banner-lg.jpg'
 import Section from '../components/Section'
-import { HeadingStyle, HeadingLarge } from '../assets/styles/Typography'
+import { HeadingStyle, FontMedium } from '../assets/styles/Typography'
 import { GoldLink } from '../assets/styles/Utils'
 import ArrowIcon from '../assets/svg/arrow-right.svg'
 import Select from '../components/Select'
@@ -20,8 +20,15 @@ const TableStyles = styled.table`
   text-align: left;
   thead {
     display: none;
-    background-color: var(--green);
     color: var(--white);
+    font-weight: normal;
+    background-color: var(--green);
+    tr {
+      background-color: transparent;
+    }
+  }
+  th {
+    ${FontMedium}
   }
   th,
   td {
@@ -92,17 +99,24 @@ const Filters = styled.div`
   form {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
     justify-content: space-between;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   h3 {
     margin: 0;
   }
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.3fr 0.7fr;
     grid-template-rows: auto;
     gap: 0;
     align-items: center;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
   }
 `
 
@@ -118,13 +132,14 @@ const VacanciesPage: FC = (): JSX.Element => {
         }
         alignText={'left'}
         top={true}
+        tint={true}
       />
-      <Section>
+      <Section tint={true}>
         <Filters>
           <h3>4 Vacancies</h3>
           <form>
-            <Select />
-            <Select />
+            <Select label={'Location'} />
+            <Select label={'Sector'} />
           </form>
         </Filters>
         <TableStyles>
@@ -183,12 +198,7 @@ const VacanciesPage: FC = (): JSX.Element => {
           </tbody>
         </TableStyles>
       </Section>
-      <Section>
-        <h2>
-          <span>Did you know </span>Employees love it here
-        </h2>
-        <Quotes />
-      </Section>
+      <Quotes />
     </>
   )
 }

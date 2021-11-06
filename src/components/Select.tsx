@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { FC } from 'react'
 import ArrowIcon from '../assets/svg/select-arrow.svg'
 import styled from 'styled-components'
 import { HeadingStyle } from '../assets/styles/Typography'
@@ -52,27 +52,18 @@ const SelectStyles = styled.div`
     }
   }
 `
-const Select = (): JSX.Element => {
-  const selectRef = useRef<HTMLSelectElement | null>(null)
-  const handleClick = () => {
-    if (selectRef.current) {
-      console.log('click')
-      selectRef.current.setAttribute('size', '2')
-    }
-  }
-  useEffect(() => {
-    if (selectRef.current) {
-      selectRef.current.size = '1'
-    }
-  })
+interface SelectProps {
+  label?: string
+}
+const Select: FC<SelectProps> = ({ label }): JSX.Element => {
   return (
     <SelectStyles>
-      <p id="location">Location</p>
-      <button type="button" aria-labelledby="location" onClick={handleClick}>
-        <span>Select</span>
+      <p id="location">{label}</p>
+      <button type="button" aria-labelledby="location">
+        <span>{label}: Leeds</span>
         <ArrowIcon />
       </button>
-      <select ref={selectRef}>
+      <select>
         <option>Leeds</option>
         <option>Manchester</option>
       </select>

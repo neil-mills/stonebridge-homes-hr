@@ -6,6 +6,7 @@ import Facebook from '../assets/svg/facebook.svg'
 import Linkedin from '../assets/svg/linkedin.svg'
 import Twitter from '../assets/svg/twitter.svg'
 import { WhiteHover, SectionGutter } from '../assets/styles/Utils'
+
 const FooterStyles = styled.footer`
   ${SectionGutter}
   display: grid;

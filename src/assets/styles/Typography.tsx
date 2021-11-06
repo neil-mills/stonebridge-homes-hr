@@ -30,15 +30,23 @@ export const HeadingLarge = css`
     display: block;
   }
   @media screen and (min-width: 768px) {
-    margin-bottom: 2.1vw;
+    margin-bottom: 3vw;
     font-size: var(--font-large-desktop);
     font-size: clamp(var(--font-large), 2.5vw, var(--font-large-desktop));
   }
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 4rem;
+  }
+`
+export const HeadingMedium = css`
+  font-size: var(--font-medium);
+  line-height: 1.1;
+  @media screen and (min-width: 768px) {
+    font-size: var(--font-medium-desktop);
+    font-size: clamp(var(--font-medium), 1vw, var(--font-medium-desktop));
+  }
 `
 
-export const HeadingMedium = css`
-  font-size: ;
-`
 export const FontRegular = css`
   font-family: effraregular;
   font-weight: 400;

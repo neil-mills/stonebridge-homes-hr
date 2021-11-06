@@ -27,9 +27,11 @@ const ArticleItemStyles = styled.article`
   h3 {
     font-size: var(--font-xsmall);
     color: var(--gold);
+    margin-bottom: 0.5rem;
   }
   h4 {
     color: var(--green);
+    margin-bottom: 0;
   }
   [data-carousel='true'] & {
     display: inline-block;

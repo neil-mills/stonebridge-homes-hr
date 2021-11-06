@@ -4,6 +4,7 @@ import Articles from './Articles'
 import { ArticleItemType } from './ArticleItem'
 import { SectionGutter } from '../assets/styles/Utils'
 import { HeadingLarge } from '../assets/styles/Typography'
+import Section from './Section'
 import Person1 from '../assets/images/person-1.jpg'
 import Person2 from '../assets/images/person-2.jpg'
 import Person3 from '../assets/images/person-3.jpg'
@@ -73,18 +74,18 @@ const articles: ArticleItemType[] = [
 ]
 
 const PeopleStyles = styled.section`
-  ${SectionGutter}
-  background-color: var(--light-grey);
   h2 {
     ${HeadingLarge}
   }
 `
 const People = (): JSX.Element => {
   return (
-    <PeopleStyles>
-      <h2>Our people</h2>
-      <Articles carousel={false} articles={articles} />
-    </PeopleStyles>
+    <Section tint={true}>
+      <PeopleStyles>
+        <h2>Our people</h2>
+        <Articles carousel={false} articles={articles} />
+      </PeopleStyles>
+    </Section>
   )
 }
 

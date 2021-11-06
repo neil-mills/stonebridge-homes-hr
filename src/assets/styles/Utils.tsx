@@ -47,17 +47,20 @@ export const SectionGutter = css`
   @media screen and (min-width: 768px) {
     padding: var(--gutter-v) var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1400px) {
     padding: calc(var(--gutter-h) * 2) calc(var(--gutter-h) * 2);
   }
 `
 export const GutterPaddingTop = css`
   padding-top: 4rem;
   @media screen and (min-width: 768px) {
-    padding-top: var(--gutter-v);
+    padding-top: var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
-    padding-top: calc(var(--gutter-h) * 2);
+  @media screen and (min-width: 1024px) {
+    padding-top: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    padding-top: 11rem;
   }
 `
 export const GutterPaddingRight = css`
@@ -65,17 +68,23 @@ export const GutterPaddingRight = css`
   @media screen and (min-width: 768px) {
     padding-right: var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
-    padding-right: calc(var(--gutter-h) * 2);
+  @media screen and (min-width: 1024px) {
+    padding-right: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    padding-right: 11rem;
   }
 `
 export const GutterPaddingBottom = css`
   padding-bottom: 4rem;
   @media screen and (min-width: 768px) {
-    padding-bottom: var(--gutter-v);
+    padding-bottom: var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
-    padding-bottom: calc(var(--gutter-h) * 2);
+  @media screen and (min-width: 1024px) {
+    padding-bottom: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    padding-bottom: 11rem;
   }
 `
 export const GutterPaddingLeft = css`
@@ -83,17 +92,23 @@ export const GutterPaddingLeft = css`
   @media screen and (min-width: 768px) {
     padding-left: var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
-    padding-left: calc(var(--gutter-h) * 2);
+  @media screen and (min-width: 1024px) {
+    padding-left: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    padding-left: 11rem;
   }
 `
 export const GutterMarginBottom = css`
   margin-bottom: 4rem;
   @media screen and (min-width: 768px) {
-    margin-bottom: var(--gutter-v);
+    margin-bottom: var(--gutter-h);
   }
-  @media screen and (min-width: 1300px) {
-    margin-bottom: calc(var(--gutter-v) * 2);
+  @media screen and (min-width: 1024px) {
+    margin-bottom: calc(var(--gutter-h) * 2);
+  }
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 11rem;
   }
 `
 export const ScrollableArea = css`

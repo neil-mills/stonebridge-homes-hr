@@ -2,12 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import { HeadingStyle, HeadingXLarge } from '../assets/styles/Typography'
-import {
-  GutterPaddingLeft,
-  GutterPaddingRight,
-  GutterPaddingBottom,
-  SectionGutter,
-} from '../assets/styles/Utils'
+import { SectionGutter } from '../assets/styles/Utils'
 
 const HomeBannerStyles = styled.section`
   background-color: var(--green);

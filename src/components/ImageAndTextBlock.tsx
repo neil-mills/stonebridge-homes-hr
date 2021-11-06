@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import PlayIcon from '../assets/svg/play.svg'
-import {
-  SectionGutter,
-  GutterPaddingRight,
-  MarginBottomNone,
-} from '../assets/styles/Utils'
+import { SectionGutter, MarginBottomNone } from '../assets/styles/Utils'
 import Button from './Button'
 import { HeadingLarge } from '../assets/styles/Typography'
+import Section, { SectionInner } from './Section'
 
 const SectionStyles = styled.section`
   display: grid;
@@ -17,7 +14,6 @@ const SectionStyles = styled.section`
   }
   grid-template-rows: repeat(auto, 2);
   align-items: center;
-  ${SectionGutter}
   h3 {
     ${HeadingLarge}
     color: var(--green);
@@ -89,28 +85,30 @@ const ImageAndTextBlock = ({
   buttonLink = '',
 }: ImageAndTextBlockProps): JSX.Element => {
   return (
-    <SectionStyles data-text-align={alignText}>
-      {src && video && (
-        <Picture>
-          <source media="(min-width: 500px)" srcSet={srcLarge} />
-          <PlayIcon />
-          <img src={src} alt={srcAlt} />
-        </Picture>
-      )}
-      {src && !video && (
-        <Picture>
-          <source media="(min-width: 500px)" srcSet={srcLarge} />
-          <img src={src} />
-        </Picture>
-      )}
-      <aside>
-        <h3>{heading}</h3>
-        <p>{text}</p>
-        {buttonLabel && buttonLink && (
-          <Button label={buttonLabel} link={buttonLink} />
+    <Section>
+      <SectionStyles data-text-align={alignText}>
+        {src && video && (
+          <Picture>
+            <source media="(min-width: 500px)" srcSet={srcLarge} />
+            <PlayIcon />
+            <img src={src} alt={srcAlt} />
+          </Picture>
         )}
-      </aside>
-    </SectionStyles>
+        {src && !video && (
+          <Picture>
+            <source media="(min-width: 500px)" srcSet={srcLarge} />
+            <img src={src} />
+          </Picture>
+        )}
+        <aside>
+          <h3>{heading}</h3>
+          <p>{text}</p>
+          {buttonLabel && buttonLink && (
+            <Button label={buttonLabel} link={buttonLink} />
+          )}
+        </aside>
+      </SectionStyles>
+    </Section>
   )
 }
 

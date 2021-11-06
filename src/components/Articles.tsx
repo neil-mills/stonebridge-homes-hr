@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import ArticleItem from './ArticleItem'
-import PageMenu from './PageMenu'
 
 const Track = styled.div`
   [data-carousel='false'] & {
@@ -11,7 +10,7 @@ const Track = styled.div`
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     @media screen and (min-width: 1024px) {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
     width: 100%;
   }

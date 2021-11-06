@@ -9,6 +9,7 @@ import CultureImgLg from '../assets/images/culture-image-lg.jpg'
 import People from '../components/People'
 import ParallaxImg from '../assets/images/working-with-us-parallax.jpg'
 import ParallaxImgLg from '../assets/images/working-with-us-parallax-lg.jpg'
+import Benefits, { benefitsData } from '../components/Benefits'
 
 const WorkingWithUsPage: FC = (): JSX.Element => {
   return (
@@ -34,6 +35,7 @@ const WorkingWithUsPage: FC = (): JSX.Element => {
       <People />
 
       <ParallaxImage src={ParallaxImg} srcLg={ParallaxImg} />
+      <Benefits benefits={benefitsData} />
     </>
   )
 }

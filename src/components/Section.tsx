@@ -1,28 +1,60 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { HeadingLarge } from '../assets/styles/Typography'
-import { SectionGutter } from '../assets/styles/Utils'
+import {
+  GutterPaddingTop,
+  GutterPaddingRight,
+  GutterPaddingBottom,
+  GutterPaddingLeft,
+} from '../assets/styles/Utils'
 
 interface StyleProps {
   tint?: boolean
+  marginTop?: boolean
+  marginBottom?: boolean
 }
 
 interface SectionProps {
   tint?: boolean
+  marginTop?: boolean
+  marginBottom?: boolean
   children: React.ReactNode
 }
 
-const SectionStyles = styled.section<StyleProps>`
-  ${SectionGutter}
-  h2 {
-    ${HeadingLarge}
+export const SectionInner = styled.div`
+  display: block;
+  position: relative;
+  width: 100%;
+  @media screen and (min-width: 1400px) {
+    max-width: 1180px;
   }
-  background-color: ${(props: StyleProps) =>
-    props.tint ? 'var(--light-grey)' : 'var(--white)'};
+  margin: 0 auto;
 `
 
-const Section = ({ tint = false, children }: SectionProps): JSX.Element => {
-  return <SectionStyles tint={tint}>{children}</SectionStyles>
+const SectionStyles = styled.section<StyleProps>`
+  ${({ marginTop }) => marginTop && GutterPaddingTop}
+  ${GutterPaddingRight}
+  ${({ marginBottom }) => marginBottom && GutterPaddingBottom}
+  ${GutterPaddingLeft}
+  background-color: ${({ tint }) =>
+    tint ? 'var(--light-grey)' : 'var(--white)'};
+`
+
+const Section: FC<SectionProps> = ({
+  tint = false,
+  marginTop = true,
+  marginBottom = true,
+  children,
+}): JSX.Element => {
+  return (
+    <SectionStyles
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+      tint={tint}
+    >
+      <SectionInner>{children}</SectionInner>
+    </SectionStyles>
+  )
 }
 
 export default Section

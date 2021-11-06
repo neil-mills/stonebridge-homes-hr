@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   :root {
     --green: #00443F;
+    --green-tint: #e6ecec;
     --gold: #BC9F5F;
     --gold-hover: #a38646;
     --grey: #666666;
@@ -17,7 +18,8 @@ const GlobalStyles = createGlobalStyle`
     --font-large-desktop: 3.5rem;
     --font-base: 1.6rem;
     --font-base-desktop: 2rem;
-    --font-medium: 2.4rem;
+    --font-medium: 1.8rem;
+    --font-medium-desktop: 2.4rem;
     --font-small: 1.6rem;
     --font-xsmall: 1.4rem;
     --gutter-v: 5vw;
@@ -31,10 +33,11 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
     height: 100%;
     box-sizing: border-box;
+    background-color: var(--green);
   }
   body {
     font-size: var(--font-base);
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: 1400px) {
       font-size: var(--font-base-desktop);
     }
     line-height: 1.4;
@@ -81,7 +84,11 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
   main {
-    margin-top: 7.6rem;
+    background-color: var(--white);
+    padding: 7.6rem 0 4rem;
+    @media screen and (min-width: 768px) {
+      padding: 7.6rem 0 3vw;
+    }
   }
 `
 export default GlobalStyles

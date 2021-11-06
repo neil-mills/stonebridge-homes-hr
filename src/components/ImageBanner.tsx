@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import { HeadingLarge } from '../assets/styles/Typography'
+import { SectionInner } from './Section'
 import {
   SectionGutter,
   GutterPaddingLeft,
   GutterPaddingRight,
   GutterMarginBottom,
 } from '../assets/styles/Utils'
+
 interface ImageBannerProps {
   top?: boolean
   src: string
@@ -18,13 +20,20 @@ interface ImageBannerProps {
   buttonLabel?: string
   buttonLink?: string
   alignText?: string
+  tint?: boolean
 }
 
-const ImageBannerStyles = styled.section`
+interface Props {
+  tint?: boolean
+}
+
+const ImageBannerStyles = styled.section<Props>`
   width: 100%;
   display: grid;
   position: relative;
   align-items: start;
+  background-color: ${({ tint }) =>
+    tint ? 'var(--light-grey)' : 'var(--white)'};
   height: auto;
   @media screen and (min-width: 768px) {
     ${GutterPaddingRight}
@@ -44,11 +53,11 @@ const ImageBannerStyles = styled.section`
       }
       &:before {
         height: 16vw;
-        max-height: 430px;
+        max-height: 208px;
       }
     }
   }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1400px) {
     margin-bottom: 10vw;
   }
 `
@@ -77,11 +86,12 @@ const InsetBox = styled.div`
     margin-top: 4.3vw;
   }
   @media screen and (min-width: 768px) {
-    width: 46vw;
+    width: 50%;
+    max-width: 592px;
     padding: 5.7vw;
   }
-  @media screen and (min-width: 1300px) {
-    width: 42vw;
+  @media screen and (min-width: 1400px) {
+    padding: 8rem;
   }
 `
 const BgImage = styled.picture`
@@ -96,16 +106,19 @@ const BgImage = styled.picture`
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 5vw;
+    bottom: var(--gutter-h);
     left: 0;
     height: auto;
   }
-  @media screen and (min-width: 1300px) {
-    bottom: 10vw;
+  @media screen and (min-width: 1024px) {
+    bottom: calc(var(--gutter-h) * 2);
+  }
+  @media screen and (min-width: 1400px) {
+    bottom: 11rem;
   }
 `
 
-const ImageBanner = ({
+const ImageBanner: FC<ImageBannerProps> = ({
   top = false,
   src,
   srcLarge,
@@ -115,9 +128,11 @@ const ImageBanner = ({
   buttonLink,
   buttonLabel,
   alignText = 'right',
-}: ImageBannerProps): JSX.Element => {
+  tint = false,
+}): JSX.Element => {
   return (
     <ImageBannerStyles
+      tint={tint}
       data-position={top ? 'top' : 'page'}
       data-text-align={alignText}
     >
@@ -125,13 +140,15 @@ const ImageBanner = ({
         <source media="(min-width: 768px)" srcSet={srcLarge} />
         <img src={src} alt={srcAlt} />
       </BgImage>
-      <InsetBox>
-        <h3>{heading}</h3>
-        <p>{text}</p>
-        {buttonLabel && buttonLink && (
-          <Button label={buttonLabel} link={buttonLink} />
-        )}
-      </InsetBox>
+      <SectionInner>
+        <InsetBox>
+          <h3>{heading}</h3>
+          <p>{text}</p>
+          {buttonLabel && buttonLink && (
+            <Button label={buttonLabel} link={buttonLink} />
+          )}
+        </InsetBox>
+      </SectionInner>
     </ImageBannerStyles>
   )
 }

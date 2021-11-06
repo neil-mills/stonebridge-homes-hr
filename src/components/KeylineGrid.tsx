@@ -17,17 +17,17 @@ const ItemStyles = styled.div`
     border-width: 0;
   }
   @media screen and (min-width: 768px) {
-    padding: 6vw 0 6vw 6vw;
+    padding: 4vw 0 4vw 6vw;
     border-width: 1px 0 0 0;
-    & > div {
-      height: 100%;
-      padding-right: 6vw;
-      border-right: 1px solid var(--keyline-grey);
-    }
     &:last-child {
       border-width: 1px 0 0;
     }
     [data-columns='2'] & {
+      & > div {
+        height: 100%;
+        padding-right: 6vw;
+        border-right: 1px solid var(--keyline-grey);
+      }
       margin: 0 0 0 -6vw;
       width: calc(100% / 2 + 6vw);
       &:nth-child(-n + 2) {
@@ -47,12 +47,18 @@ const ItemStyles = styled.div`
       }
     }
     [data-columns='3'] & {
-      width: calc(100% / 3 + 4vw);
-      &:nth-child(-n + 3) {
-        border-width: 0;
+      width: calc(100% / 2);
+      padding: 0;
+      border-width: 1px 1px 0 0;
+      &:nth-child(-n + 2) {
+        border-width: 0 1px 0 0;
       }
-      &:first-child,
-      &:nth-child(4n) {
+      &:nth-child(2n) {
+        border-right: 0;
+      }
+
+      /* width: calc(100% / 3 + 3vw); */
+      /* &:nth-child(3n -2) {
         margin-left: -6vw;
       }
       &:nth-child(3n) {
@@ -66,6 +72,20 @@ const ItemStyles = styled.div`
         & > div {
           border: none;
         }
+      } */
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    [data-columns='3'] & {
+      width: calc(100% / 3);
+      &:nth-child(-n + 3) {
+        border-width: 0 1px 0 0;
+      }
+      &:nth-child(2n) {
+        border-right: 1px solid var(--keyline-grey);
+      }
+      &:nth-child(3n) {
+        border-right: 0;
       }
     }
   }
@@ -79,10 +99,10 @@ interface KeylineGridProps {
   children: ReactNode
 }
 
-const KeylineGrid: FC = ({
+const KeylineGrid: FC<KeylineGridProps> = ({
   columns = 2,
   children,
-}: KeylineGridProps): JSX.Element => {
+}): JSX.Element => {
   return <GridStyles data-columns={columns}>{children}</GridStyles>
 }
 
