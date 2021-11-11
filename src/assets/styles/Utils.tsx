@@ -45,18 +45,18 @@ export const GoldLink = css`
 export const SectionGutter = css`
   padding: 4rem 2rem;
   @media screen and (min-width: 768px) {
-    padding: var(--gutter-v) var(--gutter-h);
+    padding: calc(var(--gutter-h) * 1.5) var(--gutter-h);
+  }
+  @media screen and (min-width: 1024px) {
+    padding: calc(var(--gutter-h) * 1.5);
   }
   @media screen and (min-width: 1400px) {
-    padding: calc(var(--gutter-h) * 2) calc(var(--gutter-h) * 2);
+    padding: 11rem;
   }
 `
 export const GutterPaddingTop = css`
   padding-top: 4rem;
   @media screen and (min-width: 768px) {
-    padding-top: var(--gutter-h);
-  }
-  @media screen and (min-width: 1024px) {
     padding-top: calc(var(--gutter-h) * 1.5);
   }
   @media screen and (min-width: 1400px) {
@@ -78,11 +78,9 @@ export const GutterPaddingRight = css`
 export const GutterPaddingBottom = css`
   padding-bottom: 4rem;
   @media screen and (min-width: 768px) {
-    padding-bottom: var(--gutter-h);
-  }
-  @media screen and (min-width: 1024px) {
     padding-bottom: calc(var(--gutter-h) * 1.5);
   }
+
   @media screen and (min-width: 1400px) {
     padding-bottom: 11rem;
   }
@@ -97,6 +95,18 @@ export const GutterPaddingLeft = css`
   }
   @media screen and (min-width: 1400px) {
     padding-left: 11rem;
+  }
+`
+export const GapMargin = css`
+  gap: 2rem;
+  @media screen and (min-width: 768px) {
+    gap: var(--gutter-h);
+  }
+  @media screen and (min-width: 1024px) {
+    gap: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    gap: 11rem;
   }
 `
 
@@ -129,9 +139,6 @@ export const GutterMarginTop = css`
 export const GutterMarginBottom = css`
   margin-bottom: 4rem;
   @media screen and (min-width: 768px) {
-    margin-bottom: var(--gutter-h);
-  }
-  @media screen and (min-width: 1024px) {
     margin-bottom: calc(var(--gutter-h) * 1.5);
   }
   @media screen and (min-width: 1400px) {
@@ -156,13 +163,13 @@ export const VisiblyHidden = css`
 `
 export const VerticalSpacingTop = css`
   margin-top: 3rem;
-  @media screen and (min-width: 1400px) {
-    margin-top: 5rem;
+  @media screen and (min-width: 768px) {
+    margin-top: 4rem;
   }
 `
 export const VerticalSpacingBottom = css`
   margin-bottom: 3rem;
-  @media screen and (min-width: 1400px) {
-    margin-bottom: 5rem;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 4rem;
   }
 `

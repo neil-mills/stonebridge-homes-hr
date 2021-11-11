@@ -9,7 +9,7 @@ import Section, { SectionInner } from './Section'
 const SectionStyles = styled.section`
   display: grid;
   gap: 2rem;
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 768px) {
     gap: 0;
   }
   grid-template-rows: repeat(auto, 2);
@@ -71,6 +71,7 @@ interface ImageAndTextBlockProps {
   buttonLink?: string
   heading: string
   text: string
+  tint?: boolean
 }
 const ImageAndTextBlock = ({
   alignText = 'left',
@@ -82,9 +83,10 @@ const ImageAndTextBlock = ({
   srcAlt = '',
   buttonLabel = '',
   buttonLink = '',
+  tint = false,
 }: ImageAndTextBlockProps): JSX.Element => {
   return (
-    <Section>
+    <Section tint={tint}>
       <SectionStyles data-text-align={alignText}>
         {src && video && (
           <Picture>

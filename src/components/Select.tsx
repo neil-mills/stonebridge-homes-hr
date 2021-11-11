@@ -3,9 +3,9 @@ import ArrowIcon from '../assets/svg/select-arrow.svg'
 import styled from 'styled-components'
 import { HeadingStyle } from '../assets/styles/Typography'
 
-const SelectStyles = styled.div`
+const SelectStyles = styled.div<SelectProps>`
   display: block;
-  width: 100%;
+  width: ${({ size }) => (size === 'sm' ? '30%' : '100%')};
   height: 44px;
   position: relative;
   p {
@@ -52,10 +52,11 @@ const SelectStyles = styled.div`
 `
 interface SelectProps {
   label?: string
+  size?: string
 }
-const Select: FC<SelectProps> = ({ label }): JSX.Element => {
+const Select: FC<SelectProps> = ({ label, size = 'lg' }): JSX.Element => {
   return (
-    <SelectStyles>
+    <SelectStyles size={size}>
       <p id="location">{label}</p>
       <button type="button" aria-labelledby="location">
         <span>{label}: Leeds</span>

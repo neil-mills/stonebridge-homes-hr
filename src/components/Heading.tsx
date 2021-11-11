@@ -49,7 +49,14 @@ const HeadingStyles = styled.div<HeadingProps>`
         : css`
             ${HeadingLarge}
           `};
-    ${({ marginBottom }) => !marginBottom && 'margin-bottom: 0;'};
+    ${({ marginBottom }) =>
+      !marginBottom &&
+      css`
+        margin-bottom: 0;
+        @media screen and (min-width: 768px) {
+          margin-bottom: 0;
+        }
+      `};
     ${({ text }) => text && 'margin-bottom: 0;'};
   }
   p {

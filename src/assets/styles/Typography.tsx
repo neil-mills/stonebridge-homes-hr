@@ -15,9 +15,13 @@ export const HeadingXLarge = css`
   font-size: var(--font-xlarge);
   line-height: 1;
   margin-bottom: 3rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 500px) {
+    font-size: var(--font-xlarge);
+    font-size: clamp(var(--font-xlarge), 4.6vw, var(--font-xlarge-desktop));
+  }
+  @media screen and (min-width: 1400px) {
     font-size: var(--font-xlarge-desktop);
-    font-size: clamp(var(--font-xlarge), 5.5vw, var(--font-xlarge-desktop));
+    margin-bottom: 4rem;
   }
 `
 
@@ -44,13 +48,13 @@ export const HeadingLarge = css`
     display: block;
   }
   @media screen and (min-width: 768px) {
-    margin-bottom: 2.85vw;
+    margin-bottom: 3.2rem;
     font-size: var(--font-large);
     font-size: clamp(var(--font-large), 2.5vw, var(--font-large-desktop));
   }
   @media screen and (min-width: 1400px) {
     font-size: var(--font-large-desktop);
-    margin-bottom: 4rem;
+    /* margin-bottom: 3.2rem; */
   }
 `
 export const HeadingMedium = css`
@@ -58,12 +62,12 @@ export const HeadingMedium = css`
   line-height: 1.1;
   margin-bottom: 2rem;
   @media screen and (min-width: 768px) {
-    margin-bottom: 2.85vw;
+    margin-bottom: 4rem;
     font-size: var(--font-medium-desktop);
     font-size: clamp(var(--font-medium), 1.7vw, var(--font-medium-desktop));
   }
   @media screen and (min-width: 1400px) {
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
     font-size: var(--font-medium-desktop);
   }
 `
