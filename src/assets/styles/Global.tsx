@@ -8,12 +8,16 @@ const GlobalStyles = createGlobalStyle`
     --gold-hover: #a38646;
     --grey: #666666;
     --light-grey: #FAFAFA;
+    --mid-grey: #BFBFBF;
+    --dark-grey: #262626;
     --keyline-grey: #E8E8E8;
     --white: #FFFFFF;
     --black: #000000;       
     --white-hover: #cccccc;
     --font-xlarge: 3rem;
     --font-xlarge-desktop: 6.5rem;
+    --font-larger: 2.4rem;
+    --font-larger-desktop: 4.6rem;
     --font-large: 2.4rem;
     --font-large-desktop: 3.5rem;
     --font-base: 1.6rem;
@@ -58,11 +62,16 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  p {
+    margin: 1rem 0;
+  }
   ul {
     list-style: none;
   }
   img {
     display: block;
+    width: 100%;
+    height: auto;
   }
   *,
   *:before,

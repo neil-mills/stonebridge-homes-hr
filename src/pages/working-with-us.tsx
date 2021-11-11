@@ -10,6 +10,7 @@ import People from '../components/People'
 import ParallaxImg from '../assets/images/working-with-us-parallax.jpg'
 import ParallaxImgLg from '../assets/images/working-with-us-parallax-lg.jpg'
 import Benefits, { benefitsData } from '../components/Benefits'
+import Values from '../components/Values'
 
 const WorkingWithUsPage: FC = (): JSX.Element => {
   return (
@@ -36,6 +37,13 @@ const WorkingWithUsPage: FC = (): JSX.Element => {
 
       <ParallaxImage src={ParallaxImg} srcLg={ParallaxImg} />
       <Benefits benefits={benefitsData} />
+      <Values />
+      <ImageAndTextBlock
+        heading={'Become a subcontractor'}
+        text={'Be a part of our amazing team at Stonebridge Homes'}
+        buttonLabel={'Register your details'}
+        buttonLink={'/'}
+      />
     </>
   )
 }

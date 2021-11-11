@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import Instagram from '../assets/svg/instagram.svg'
-import Facebook from '../assets/svg/facebook.svg'
-import Linkedin from '../assets/svg/linkedin.svg'
-import Twitter from '../assets/svg/twitter.svg'
+import SocialNav from './SocialNav'
 import { WhiteHover, SectionGutter } from '../assets/styles/Utils'
 
 const FooterStyles = styled.footer`
@@ -77,19 +74,6 @@ const SecondaryNav = styled.nav`
     }
   }
 `
-const SocialNav = styled.nav`
-  ul {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 19px;
-    gap: 2rem;
-    @media screen and (min-width: 768px) {
-      justify-content: right;
-    }
-  }
-  a {
-  }
-`
 
 const Footer: FC = (): JSX.Element => {
   return (
@@ -125,30 +109,7 @@ const Footer: FC = (): JSX.Element => {
           <br />
           LS18 4QF, United Kingdom
         </address>
-        <SocialNav>
-          <ul>
-            <li>
-              <a href="">
-                <Instagram />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <Facebook />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <Linkedin />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <Twitter />
-              </a>
-            </li>
-          </ul>
-        </SocialNav>
+        <SocialNav />
       </aside>
     </FooterStyles>
   )

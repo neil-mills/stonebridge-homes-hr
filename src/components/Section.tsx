@@ -8,17 +8,11 @@ import {
   GutterPaddingLeft,
 } from '../assets/styles/Utils'
 
-interface StyleProps {
-  tint?: boolean
-  marginTop?: boolean
-  marginBottom?: boolean
-}
-
 interface SectionProps {
   tint?: boolean
   marginTop?: boolean
   marginBottom?: boolean
-  children: React.ReactNode
+  as?: React.ElementType
 }
 
 export const SectionInner = styled.div`
@@ -31,7 +25,7 @@ export const SectionInner = styled.div`
   margin: 0 auto;
 `
 
-const SectionStyles = styled.section<StyleProps>`
+const SectionStyled = styled.section<SectionProps>`
   ${({ marginTop }) => marginTop && GutterPaddingTop}
   ${GutterPaddingRight}
   ${({ marginBottom }) => marginBottom && GutterPaddingBottom}
@@ -44,16 +38,18 @@ const Section: FC<SectionProps> = ({
   tint = false,
   marginTop = true,
   marginBottom = true,
+  as = 'section',
   children,
 }): JSX.Element => {
   return (
-    <SectionStyles
+    <SectionStyled
       marginTop={marginTop}
       marginBottom={marginBottom}
       tint={tint}
+      as={as}
     >
       <SectionInner>{children}</SectionInner>
-    </SectionStyles>
+    </SectionStyled>
   )
 }
 

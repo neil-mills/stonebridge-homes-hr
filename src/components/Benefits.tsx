@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Section from './Section'
 import KeylineGrid, { KeylineGridItem } from './KeylineGrid'
 import CarIcon from '../assets/svg/icon-car.svg'
@@ -14,7 +14,9 @@ import AcademyIcon from '../assets/svg/icon-academy.svg'
 import PensionIcon from '../assets/svg/icon-pension.svg'
 import WorkingIcon from '../assets/svg/icon-hybrid-working.svg'
 import HealthIcon from '../assets/svg/icon-healthshield.svg'
-import { HeadingMedium } from '../assets/styles/Typography'
+import Spacer from './Spacer'
+import IconTitle from './IconTitle'
+import Heading from './Heading'
 
 interface BenefitItemProps {
   icon: React.ReactNode
@@ -89,13 +91,14 @@ export const benefitsData: BenefitItemProps[] = [
   },
 ]
 
-const BenefitItemStyle = styled.div`
+const BenefitItemStyles = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  padding: 0 4rem;
+  text-align: left;
   @media screen and (min-width: 768px) {
+    padding: 0 4rem;
+    text-align: center;
     padding: 0;
     display: grid;
     overflow: hidden;
@@ -108,79 +111,70 @@ const BenefitItemStyle = styled.div`
     }
   }
 `
-
-const BenefitTitle = styled.div`
-  padding: 0 2rem;
-  h3 {
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-    ${HeadingMedium}
-  }
-  svg {
-    height: 40px;
-    width: auto;
-    margin-bottom: 2rem;
-  }
+const BenefitItemCard = css`
   @media screen and (min-width: 768px) {
     grid-area: 1 / 1 / 1 / 1;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 7vw 6vw;
+    padding: 6vw 5vw;
+    /* div {
+      max-width: 200px;
+    } */
   }
   @media screen and (min-width: 1024px) {
-    padding: 4vw 2vw;
+    padding: 4vw 3vw;
   }
 `
-const Overlay = styled.div`
+const TitleCard = styled.div`
+  ${BenefitItemCard}
+`
+const OverlayCard = styled.div`
+  ${BenefitItemCard}
   position: relative;
   p {
     margin: 0;
   }
   @media screen and (min-width: 768px) {
-    transform: translateY(99%);
-    grid-area: 1 / 1 / 1 / 1;
-    display: flex;
     align-items: center;
-    padding: 6vw;
+    transform: translateY(99%);
     transition: all 200ms ease;
     will-change: transform;
     background-color: var(--green-tint);
     color: var(--grey);
     opacity: 0;
   }
-  @media screen and (min-width: 1024px) {
-    padding: 4vw 3vw;
-  }
 `
 const BenefitItem: FC<BenefitItemProps> = ({ icon, title, text }) => {
   return (
-    <BenefitItemStyle>
-      <BenefitTitle>
-        <div>
-          {icon}
-          <h3>{title}</h3>
-        </div>
-      </BenefitTitle>
-      <Overlay>
+    <BenefitItemStyles>
+      <TitleCard>
+        <IconTitle icon={icon} title={title} align={'left'} />
+      </TitleCard>
+      <OverlayCard>
         <p>{text}</p>
-      </Overlay>
-    </BenefitItemStyle>
+      </OverlayCard>
+    </BenefitItemStyles>
   )
 }
 
 const Benefits: FC<BenefitProps> = ({ benefits }) => {
   return (
     <Section>
-      <KeylineGrid columns={3}>
-        {benefits.map((benefit, i) => (
-          <KeylineGridItem key={i}>
-            <BenefitItem {...benefit} />
-          </KeylineGridItem>
-        ))}
-      </KeylineGrid>
+      <Heading
+        heading={'Our benefits'}
+        text={'Lorem ipsum dolor sit amet, consectetur adipiscing'}
+      />
+      <Spacer marginTop={true}>
+        <KeylineGrid columns={3}>
+          {benefits.map((benefit, i) => (
+            <KeylineGridItem key={i}>
+              <BenefitItem {...benefit} />
+            </KeylineGridItem>
+          ))}
+        </KeylineGrid>
+      </Spacer>
     </Section>
   )
 }

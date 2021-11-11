@@ -15,8 +15,6 @@ const SelectStyles = styled.div`
     width: 100%;
     height: 44px;
     position: relative;
-  }
-  button {
     z-index: 2;
     display: flex;
     justify-content: space-between;

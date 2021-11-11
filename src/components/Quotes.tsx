@@ -4,6 +4,7 @@ import Avatar from '../assets/images/avatar.jpg'
 import KeylineGrid, { KeylineGridItem } from './KeylineGrid'
 import Section from './Section'
 import Heading from './Heading'
+import Author from './Author'
 
 const QuoteStyles = styled.div`
   display: flex;
@@ -55,10 +56,7 @@ const Quote = ({ title, quote, name, avatar }: QuoteProps): JSX.Element => {
         <blockquote>{quote}</blockquote>
       </div>
       <footer>
-        <div>
-          <img src={avatar} />
-        </div>
-        {name}
+        <Author label={name} avatar={avatar} />
       </footer>
     </QuoteStyles>
   )

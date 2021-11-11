@@ -16,7 +16,6 @@ const SectionStyles = styled.section`
   align-items: center;
   h3 {
     ${HeadingLarge}
-    color: var(--green);
     margin-bottom: 2rem;
   }
   p {

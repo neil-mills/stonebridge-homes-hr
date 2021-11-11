@@ -4,17 +4,21 @@ import styled from 'styled-components'
 interface Props {
   columns?: number
 }
-const GridStyles = styled.div<Props>`
+const GridStyles = styled.ul<Props>`
   display: flex;
   flex-wrap: wrap;
   overflow-x: hidden;
 `
-const ItemStyles = styled.div`
+const ItemStyles = styled.li`
   padding: 4rem 0;
   border: 1px solid var(--keyline-grey);
   border-width: 0 0 1px;
+  &:first-child {
+    padding-top: 0;
+  }
   &:last-child {
     border-width: 0;
+    padding-bottom: 0;
   }
   @media screen and (min-width: 768px) {
     padding: 4vw 0 4vw 6vw;
@@ -33,6 +37,9 @@ const ItemStyles = styled.div`
       &:nth-child(-n + 2) {
         border-width: 0;
       }
+      &:first-child {
+        padding-top: 4vw;
+      }
       &:nth-child(2n) {
         margin: 0 -6vw 0 0;
         padding-right: 0;
@@ -41,6 +48,7 @@ const ItemStyles = styled.div`
         }
       }
       &:last-child {
+        padding-bottom: 4vw;
         & > div {
           border: none;
         }
@@ -56,23 +64,6 @@ const ItemStyles = styled.div`
       &:nth-child(2n) {
         border-right: 0;
       }
-
-      /* width: calc(100% / 3 + 3vw); */
-      /* &:nth-child(3n -2) {
-        margin-left: -6vw;
-      }
-      &:nth-child(3n) {
-        padding-right: 0;
-        margin-right: -6vw;
-        & > div {
-          border: none;
-        }
-      }
-      &:last-child {
-        & > div {
-          border: none;
-        }
-      } */
     }
   }
   @media screen and (min-width: 1024px) {

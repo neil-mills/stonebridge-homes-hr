@@ -99,13 +99,40 @@ export const GutterPaddingLeft = css`
     padding-left: 11rem;
   }
 `
+
+export const GutterMarginLeft = css`
+  padding-left: 2rem;
+  @media screen and (min-width: 768px) {
+    padding-left: var(--gutter-h);
+  }
+  @media screen and (min-width: 1024px) {
+    padding-left: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    padding-left: 11rem;
+  }
+`
+
+export const GutterMarginTop = css`
+  margin-bottom: 4rem;
+  @media screen and (min-width: 768px) {
+    margin-top: var(--gutter-h);
+  }
+  @media screen and (min-width: 1024px) {
+    margin-top: calc(var(--gutter-h) * 1.5);
+  }
+  @media screen and (min-width: 1400px) {
+    margin-top: 11rem;
+  }
+`
+
 export const GutterMarginBottom = css`
   margin-bottom: 4rem;
   @media screen and (min-width: 768px) {
     margin-bottom: var(--gutter-h);
   }
   @media screen and (min-width: 1024px) {
-    margin-bottom: calc(var(--gutter-h) * 2);
+    margin-bottom: calc(var(--gutter-h) * 1.5);
   }
   @media screen and (min-width: 1400px) {
     margin-bottom: 11rem;
@@ -122,4 +149,20 @@ export const ScrollableArea = css`
   }
   --ms-overflow-style: none;
   scrollbar-width: none;
+`
+
+export const VisiblyHidden = css`
+  display: none;
+`
+export const VerticalSpacingTop = css`
+  margin-top: 3rem;
+  @media screen and (min-width: 1400px) {
+    margin-top: 5rem;
+  }
+`
+export const VerticalSpacingBottom = css`
+  margin-bottom: 3rem;
+  @media screen and (min-width: 1400px) {
+    margin-bottom: 5rem;
+  }
 `

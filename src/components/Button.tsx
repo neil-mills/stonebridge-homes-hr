@@ -19,7 +19,7 @@ const ButtonStyles = styled.button<Props>`
   color: ${props => (props.secondary ? 'var(--green)' : 'var(--white)')};
   font-size: var(--font-xsmall);
   text-transform: uppercase;
-  padding: 1.6rem;
+  padding: 1.2rem 1.6rem;
   text-align: center;
   transition: background-color 200ms ease;
   will-change: background-color;

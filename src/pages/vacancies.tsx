@@ -7,7 +7,7 @@ import BannerLg from '../assets/images/vacancies-banner-lg.jpg'
 import Section from '../components/Section'
 import { HeadingStyle, FontMedium } from '../assets/styles/Typography'
 import { GoldLink } from '../assets/styles/Utils'
-import ArrowIcon from '../assets/svg/arrow-right.svg'
+import ArrowIcon from '../assets/svg/arrow-icon.svg'
 import Select from '../components/Select'
 import Quotes from '../components/Quotes'
 
@@ -155,13 +155,13 @@ const VacanciesPage: FC = (): JSX.Element => {
           <tbody>
             <tr>
               <td>
-                <Link to="/">Marketing Manager</Link>
+                <Link to={'/vacancy'}>Marketing Manager</Link>
               </td>
               <td>Leeds</td>
               <td>Full time</td>
               <td>Marketing</td>
               <td>
-                <ArrowLink to="/">
+                <ArrowLink to={'/vacancy'}>
                   Apply
                   <ArrowIcon />
                 </ArrowLink>
@@ -169,13 +169,13 @@ const VacanciesPage: FC = (): JSX.Element => {
             </tr>
             <tr>
               <td>
-                <Link to="/">Marketing Manager</Link>
+                <Link to={'/vacancy'}>Marketing Manager</Link>
               </td>
               <td>Leeds</td>
               <td>Full time</td>
               <td>Sales</td>
               <td>
-                <ArrowLink to="/">
+                <ArrowLink to="/vacancy">
                   Apply
                   <ArrowIcon />
                 </ArrowLink>
@@ -183,13 +183,13 @@ const VacanciesPage: FC = (): JSX.Element => {
             </tr>
             <tr>
               <td>
-                <Link to="/">Marketing Manager</Link>
+                <Link to={'/vacancy'}>Marketing Manager</Link>
               </td>
               <td>Leeds</td>
               <td>Contract</td>
               <td>Marketing</td>
               <td>
-                <ArrowLink to="/">
+                <ArrowLink to={'/vacancy'}>
                   Apply
                   <ArrowIcon />
                 </ArrowLink>
